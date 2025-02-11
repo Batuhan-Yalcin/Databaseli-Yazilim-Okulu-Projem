@@ -1,0 +1,7 @@
+SİTENİN ARAYÜZÜ İNDEX.PHP DİR !
+GİRİS.PHP İSE;
+KULLANICI ADINI ADMİN ŞİFREYİ 1907 GİRİNCE İNDEX E ATAR
+PANELGİRİS.PHP İSE VERİ TABANINDAN ÇEKTİĞİM VERİLERİ 
+HTML CSS İLE TABLO İÇİNDE GÖSTERDİĞİM VERİ ÇEKTİĞİM KISIMDIR
+PANELGİRİS.PHP NİN KULLANICI ADI admin
+şifre 1907 olarak girdiğimizde iletişim formunu dolduran kullanıcıların girdiği verileri görüntüleyebiliyorum

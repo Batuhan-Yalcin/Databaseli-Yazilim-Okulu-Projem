@@ -1,0 +1,133 @@
+SİTEMİ 6 ADET SECTİON ÜZERİNE KURDUM 
+1- MENÜ KISMI ( SAĞ ÜSTTEKİ ANASAYFA HAKKIMIZDA EĞİTİMLER VS. YAZAN KISIM)
+
+2- ANASAYFA KISMI (	Sitenin İlk Görünür Yüzü Resmin İçinde Yazılım Okulu Yazan Kısmı )
+
+3- HAKKIMIZDA KISMI ( BİZİ ANLATAN HAKKIMIZDA İÇERİK KISMI )
+
+4- EĞİTİMLER KISMI ( HTML CSS JS MYSQL JAVA EĞİTİMİ OLAN KUTUCUKLAR )
+
+5- EKİP KISMI ( YAZILIM OKULU PROJEMDEKİ KİŞİLERİN GÖREVLERİNİ VE KİM OLDUĞUNU BELİRTTİĞİM KISIM )
+
+6- İLETİŞİM KISMI ( Bize Ulaşmaları İçin Mesaj Gönderebildikleri Veri Tabanına Giden Kısım.)
+
+
+Size Daha Öncesinde kutucukları yan yana getirmek için javascript kullanacağımı söylemiştim ve sizde izin vermiştiniz.
+kutuları js ile bağladım.
+
+				
+
+				<----	İNDEX.PHP DE YAPTIKLARIM !    --->
+				
+
+php kodları şu işe yarıyor 
+
+include ile baglanti.php den veri tabanı kodlarını alacağımı belirttim
+
+if - isset ile değişkenlerin tanımlı olup olmadığını kontrol ettim.
+
+sonra formda name olarak belirttiğim isim tel mail konu mesajı :   adsoyad telefon email konu mesaj değişkenine atadım.
+
+ekle değişkenine Veri tabanından İnsert İNTO İLE VERİ EKLEDİM İLETİŞİM Tablomun adıdır.
+
+Values ile formdaki name'lerden aldığım isimleri değişkene tanımlamıştım o değişkenleri yazdırdım.
+
+if bağlan query kodum ile ekle değişkenin içindeki veriler doğruysa diye sorgu yaptım query = sorgu
+
+eğer doğruysa mesaj başarı ile gönderildi 
+
+değilse mesaj başarısız uyarısı verdim php ile de yapabilirdim ama php de sitenin altında yada üstünde mesaj veriyor
+
+oyüzden javascript ile daha güzel görünüm katmak istedim.
+
+
+
+
+					<----	GİRİS.PHP DE YAPTIKLARIM !    --->
+
+İF $ server ve REQUEST METHOD İLE FORMDAN GÖNDERİLEN VERİLERİ ALMAK İÇİN KULLANDIM.
+
+formdaki name de belirttiğim kAdi ve sifre namelerini değişken olan kAdi ve şifreye atadım 
+
+eğer kAdi = adminse sifre = 1907 ise header ile lokasyonu index.php ye gitmesini belirttim.
+
+sonra sistemi sonlandır dedim exit ile 
+
+değilse else ile yani 
+
+kullanıcı adı ve şifreniz yanlış yaz dedim ekrana :)
+
+
+
+
+
+				<----	PANEL.PHP DE YAPTIKLARIM !    --->
+
+
+PANEL GİRİŞ İSİMLİ SAYFAMA DIŞARIDAN KİMSE GİREMEMESİ İÇİN session_start ile oturum başlattım 
+
+user isminde bir kullanıcı adı belirttim if bloğunda
+
+içini boş bıraktım
+
+yani user a bir değer girilmezse lokasyonunu cikis.php ye göndermesini söyledim php ile de yapabilirdim header ile ama js ile yapmayı tercih ettim.
+
+else - yani içi boş değilse
+
+echo ile kullanıcı adınız dedim user yani Panel giriş.php de belirttiğim user kimse onu yazdırsın dedim.
+
+altına da a etiketiyle çıkış yapması için bir yönlendirme verdim kullanıcı istediği zaman çıkabilsin diye
+
+include ( baglanti.php) de ise veri tabanından verileri çekmesi için baglanti . php yi belirttim
+
+select from iletişim de ise iletişim tablosundan seç dedim (iletişim veritabanı tablo adım )
+
+if $sonuc num rows 0 dan büyükse yani tabloda herhangi bir veri varsa dedim
+
+while döngüsü ile fetch assoc sayesinde tablodaki verileri aldım çek dizisi içine attım ve görüntüleyebilmeyi sağladım 
+
+sonra aşşağıda veri tabanında tablomda ki isimleri girdim ad soyad tel email konu mesaj.
+
+değilse de veri tabanında kayıtlı veri bulunamadı yazdırdım.
+
+ 
+
+				<----	PANELGİRİS.PHP DE YAPTIKLARIM !    --->
+
+
+session start ile yönetici olan birisinin panele girmesi için oturum başlattım 
+
+isset ile formdan gelen kullanıcı ve sifre isimli namelere veri girildi mi kontrol ediyorum 
+
+$_POST kullaniciadi yani formdaki name de ki kullanici adi adminse veya batuysa şifre b190758x ise veya 1907 ise dedim
+
+$_session ile formdaki name e girdiğim kullaniciadinı usera tanımladım 
+
+header ile lokasyonunu panel.php ye yönlendirdim kullanıcı ve şifreyi doğru giren panel de ki mesajları görüntüleyebilmesi için
+
+eğer ki kullanıcı adı veya şifresi yanlışsa Şifre veya kullanıcı yanlış lütfen doğru bilgileri giriniz yazdırdım echo ile 
+
+
+
+				<----	BAGLANTİ.PHP DE YAPTIKLARIM !    --->
+
+
+vt sunucu vt kullanıcı vt sifre vt adı isminde 4 değişken oluşturdum 
+
+vt sunucuyu localhost olarak belirttim 
+
+vt kullanıcı yı root olarak belirttim
+
+vt sifre veritabanına şifre koymadığım için boş bıraktım
+
+vt adina ise veritabanı adını girdim
+
+$baglan isminde değişken tanımlayıp mysqli connect ile bağlantı kurmak istediğim değişkenleri belirttim 
+
+if bloğunda ise eğer bağlantı başarısızsa dedim başında ünlem var dikkat edin hocam
+
+die ile ise Programın bağlantı başarısız ise durdurulması için yaptım
+
+
+		HOCAM UMARIM AÇIKLAYICI OLMUŞUMDUR SİTEM BUNDAN İBARET SAYGILAR.
+
